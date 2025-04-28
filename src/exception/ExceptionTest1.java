@@ -1,3 +1,4 @@
+
 package exception;
 
 public class ExceptionTest1 {
@@ -10,11 +11,10 @@ public class ExceptionTest1 {
         Calc2 calc2 = new Calc2();
 
         try {
-            calc2.divide(10,0);
+            calc2.divide(10, 0);
         } catch (DivideByZeroException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
 
@@ -22,15 +22,12 @@ class Calc2 {
 
     public int divide(int n1, int n2) throws DivideByZeroException {
         int result = 0;
-
         try {
             result = n1 / n2;
         } catch (Exception e) {
             // 우리가 만든 사용자 정의 예외 클래스를 사용
-                throw new DivideByZeroException("0으로 나누지 마세요");
-//            throw new DivideByZeroException("0으로 나누지 마세요");
-            }
-
-            return result;
+            throw new DivideByZeroException("0으로 나누지 마세요");
         }
+        return result;
     }
+}
